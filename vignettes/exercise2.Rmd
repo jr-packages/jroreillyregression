@@ -1,0 +1,38 @@
+---
+title: "Exercise 2"
+author: "Dr Jamie Owen"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{exercise2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Model Assessment
+
+1. Load the James Bond data set
+
+```{r}
+library(jroreillyregression)
+data(bond)
+head(bond)
+```
+
+2. Create a `trainControl` object to set up for cross validation estimates of test error of a model
+
+```{r,message = FALSE}
+library(caret)
+tc = trainControl(method = "cv", number = 10)
+```
+
+
+3. Train a model using `Alcohol_Units` and `Relationships` to predict number of kills using the `train` function from `caret` to estimate test error
+
+```{r}
+m = train(Kills~Alcohol_Units + Relationships, data = bond, method = "lm")
+```
+
+
+4. Fit a new model that also includes `Nationality` as a predictor. Does this improve the predictive ability of the model?
+
+5. If you have time, create bootstrapped estimates of the regression coefficients to determine the variance of them.

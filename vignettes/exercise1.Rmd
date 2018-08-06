@@ -1,0 +1,25 @@
+---
+title: "Exercise 1"
+author: "Dr Jamie Owen"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{exercise1}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Regression
+
+1. Load the James Bond data set
+
+```{r}
+library(jroreillyregression)
+data(bond)
+head(bond)
+```
+
+2. Build a regression model to predict the number of Kills James Bond makes using `Relationships` and `Alcohol_Units` as predictors
+
+3. Are any of the predictors good at informing the number of Kills James Bond makes?
+
+4. Draw some residual graphs, are the modelling assumptions justified?

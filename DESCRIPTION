@@ -1,0 +1,15 @@
+Package: jroreillyregression
+Type: Package
+Title: O'Reilly Regression Exercises
+Version: 0.1.0
+Authors@R: person(given="Jamie", family="Owen",
+    email="jamie@jumpingrivers.com", role = c("aut", "cre"))
+Maintainer: Dr Jamie Owen <jamie@jumpingrivers.com>
+Description: Data sets and exercises for the O'Reilly regression course.
+License: GPL-3
+Depends: R(>= 3.0)
+Suggests: knitr, caret, glmnet
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr

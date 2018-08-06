@@ -1,0 +1,48 @@
+---
+title: "Exercise 2"
+author: "Dr Jamie Owen"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{exercise2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Model Assessment
+
+1. `mtcars` is a data set of information on cars that is distributed with R. You can access it by typing its name
+
+```{r}
+head(mtcars)
+```
+
+2. For penalised regression we need to scale predictors. In this example we want to predict `mpg`, the efficiency of each car. The code below will separate the response from the predictors and scale the predictors to have 0 mean, unit variance. 
+
+```{r}
+y_train = mtcars[,1]
+x_train = mtcars[,-1]
+x_scaled = scale(x_train)
+```
+
+
+3. Fit a lasso model to this data. 
+
+```{r,message = FALSE}
+library(glmnet)
+fit = glmnet(x_scaled,y_train, alpha = 1)
+```
+
+
+4. Use `cv.glmnet` to find a good choice of penalty for the lasso model
+
+```{r, echo = FALSE}
+fit_cv = cv.glmnet(x_scaled,y_train,alpha = 1)
+```
+
+
+5. You can extract coefficents from the object returned in question 4 with (in my case I stored the result of cross validation in `fit_cv`). How do these compare to standard linear regression?
+
+```{r,eval = FALSE}
+coef(fit_cv, s = "lambda.min")
+```
+
