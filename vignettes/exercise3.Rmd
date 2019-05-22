@@ -3,7 +3,7 @@ title: "Exercise 2"
 author: "Dr Jamie Owen"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{exercise2}
+  %\VignetteIndexEntry{exercise3}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
