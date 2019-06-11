@@ -1,0 +1,4 @@
+linters: with_defaults(
+    assignment_linter = NULL, # 20
+    NULL
+  )
