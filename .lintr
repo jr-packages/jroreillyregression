@@ -1,4 +1,5 @@
 linters: with_defaults(
-    assignment_linter = NULL, # 20
-    NULL
+    assignment_linter = NULL,
+    object_name_linter = NULL,
+    trailing_whitespace_linter = NULL
   )
