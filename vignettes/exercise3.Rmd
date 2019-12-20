@@ -19,8 +19,8 @@ head(mtcars)
 2. For penalised regression we need to scale predictors. In this example we want to predict `mpg`, the efficiency of each car. The code below will separate the response from the predictors and scale the predictors to have 0 mean, unit variance. 
 
 ```{r}
-y_train = mtcars[,1]
-x_train = mtcars[,-1]
+y_train = mtcars[, 1]
+x_train = mtcars[, -1]
 x_scaled = scale(x_train)
 ```
 
@@ -29,14 +29,14 @@ x_scaled = scale(x_train)
 
 ```{r,message = FALSE}
 library(glmnet)
-fit = glmnet(x_scaled,y_train, alpha = 1)
+fit = glmnet(x_scaled, y_train, alpha = 1)
 ```
 
 
 4. Use `cv.glmnet` to find a good choice of penalty for the lasso model
 
 ```{r, echo = FALSE}
-fit_cv = cv.glmnet(x_scaled,y_train,alpha = 1)
+fit_cv = cv.glmnet(x_scaled, y_train, alpha = 1)
 ```
 
 
